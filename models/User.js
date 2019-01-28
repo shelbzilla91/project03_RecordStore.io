@@ -1,14 +1,16 @@
-const mongoose = require('../db/connections')
+const mongoose = require('../db/connection')
 const Schema = mongoose.Schema
 
 const User = new Schema({
-    firstname: String,
-    lastname: String,
-    genre:String,
+    name: String,
+    username: String,
+    email:String,
+    password:String,
+    img:String,
     records: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Idea'
+            ref: 'Record'
         }
     ]
 })

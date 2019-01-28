@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" "
+    "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" ",
+    "postinstall":"cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,8 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
+  },
+  "engines": {
+    "node": "8.12.0"
   }
 }
