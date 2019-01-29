@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import recordHolder from './recordHolder';
 
 class HomePage extends Component {
     state = {
@@ -13,14 +14,16 @@ class HomePage extends Component {
 
 
             }
-        ],
+        ]}
         
     
-    }
+    componentDidMount() {
+        getState();
+      }
 
     getState() {
 
-        axios.get('/recordList')
+        axios.get('/recordHolder')
             .then(newList => {
 
                 let x = {
@@ -65,6 +68,14 @@ class HomePage extends Component {
             return (
               <div>
          
+         <recordHolder 
+            
+            recList={this.state.recordHolder.recordList}
+            deleteProduct={this.deleteRecord}
+          />
+
+      <button onClick={this.getInitialState}>Records </button>
+   
         
               </div>
             );

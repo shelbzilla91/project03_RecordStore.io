@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import records from './records'
 
 class recordList extends Component {
     render() {
         return (
             <div>
                  {this.props.recordList.map((record, i) => {
-          return (<Record 
+          return (<recordList 
             key={i}
-            recordName={record.name}
-            recordBand={record.band}
-            recordPrice={record.price}
+            recordName={records.name}
+            recordBand={records.band}
+            recordPrice={records.price}
             recordProduct={this.props.deleteRecord}
             recordId={i}
             showDelete={this.props.showDeleteOnRecords}
