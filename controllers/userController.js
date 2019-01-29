@@ -17,8 +17,6 @@ const userController = {
         console.log(req.body)
         User.create({
             username: req.body.username,
-            firstName: req.body.firstName,
-            lastName:req.body.lastName,
             password:req.body.password,
             email:req.body.email,
             img: req.body.img
@@ -28,7 +26,7 @@ const userController = {
     },
     show: (req,res) => {
         const userId = req.params.banana
-        User.findById(userId).populate({path:'recipes'}).then((userLink) =>{
+        User.findById(userId).populate({path:'users'}).then((userLink) =>{
             console.log(userLink)
             res.render('user/show', {userLink})
         })
