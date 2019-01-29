@@ -23,7 +23,7 @@ class HomePage extends Component {
 
     getState() {
 
-        axios.get('/')
+        axios.get('/api/users')
             .then(newList => {
 
                 let x = {
@@ -36,7 +36,7 @@ class HomePage extends Component {
     }
 
     deleteRecord(id) {
-        axios.delete('/record/' + id)
+        axios.delete('/api/users/' + id)
             .then(newList => {
                 let x = {
                     recordList: newList

@@ -3,6 +3,7 @@ import axios from 'axios'
 import AddUserForm from './AddUserForm';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import addRecordForm from './addRecordForm';
 
 
 
@@ -34,7 +35,7 @@ class recordList extends Component {
             <GeneralStyles>
                 <h1>Hey from user view</h1>
                 <button className="btn btn-secondary btn-sm" onClick={this.toggleAddUserForm}>Create new user</button>
-                {this.state.addRecord ? <AddUserForm
+                {this.state.addRecord ? <addRecordForm
                     getAllUsers={this.getAllUsers}
                     toggleAddRecord={this.toggleAddRecord}
                     /> : null}
