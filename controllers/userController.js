@@ -7,46 +7,33 @@ const userController = {
             res.send(users)
 
 
-        } )}}
-//     },
-//     new:(req, res) => {
-//         res.render("user/new")
-//     },
-//     create: (req,res) => {
-//         console.log(req.body)
-//         User.create({
-//             username: req.body.username,
-//             password:req.body.password,
-//             email:req.body.email,
-//             img: req.body.img
-//         }).then( newUser => {
-//             res.redirect('/')
-//         })
-//     },
-//     show: (req,res) => {
-//         const userId = req.params.banana
-//         User.findById(userId).populate({path:'users'}).then((userLink) =>{
-//             console.log(userLink)
-//             res.render('user/show', {userLink})
-//         })
-//     },
-//     edit:(req,res) => {
-//         const userId = req.params.banana
-//         res.render ('user/edit', {userId})
-//     },
-//     update:(req,res) =>{
-//         const userId = req.params.banana
-//         console.log(req.body)
-//         User.findByIdAndUpdate(userId, req.body, {new: true}).then((user) => {
-//             res.redirect(`/${userId}`)
-//         })
-//     },
-//     delete:(req,res) =>{
-//     const userId = req.params.id
-//         User.findByIdAndRemove(userId).then(() => {
-//             res.redirect('/')
-//             console.log(userId)
-//         })
-//     }
-// 
+        })
+    },
+    show: (req, res) => {
+        User.findById(req.params.userId).populate('records')
+            .then((user) => {
+                res.send(user)
+            })
+    },
+    update: (req, res) => {
+        User.findByIdAndUpdate(req.params.userId, req.body)
+            .then((updatedUser) => {
+                updatedUser.save()
+                res.send(updatedUser)
+            })
+    },
+    delete: (req, res) => {
+        User.findByIdAndDelete(req.params.userId)
+            .then(() => {
+                res.send(200)
+            })
+    },
+    create: (req, res) => {
+        User.create(req.body)
+            .then((user) => {
+                res.send(user)
+            })
+    }
+}
+
 module.exports = userController

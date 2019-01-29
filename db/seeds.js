@@ -25,7 +25,7 @@ const Shelby = new User({
 
 User.remove({})
     .then(() => Record.remove({}))
-    .then(() => Record.insertMany(Queen))
+    .then(() => Record.insertMany([Queen]))
     .then(() => Shelby.save())
     .then(() => console.log('Successful Save'))
     .then(() => mongoose.connection.close())

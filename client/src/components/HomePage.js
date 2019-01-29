@@ -18,12 +18,12 @@ class HomePage extends Component {
         
     
     componentDidMount() {
-        getState()
+        this.getState()
       }
 
     getState() {
 
-        axios.get('/recordHolder')
+        axios.get('/')
             .then(newList => {
 
                 let x = {
@@ -68,9 +68,9 @@ class HomePage extends Component {
             return (
               <div>
          
-         <recordHolder 
+         <recordList
             
-            recList={this.state.recordHolder.recordList}
+            recList={this.state.recordList}
             deleteRecord={this.deleteRecord}
           />
 
