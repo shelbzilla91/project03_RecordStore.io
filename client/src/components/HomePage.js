@@ -18,7 +18,7 @@ class HomePage extends Component {
         
     
     componentDidMount() {
-        getState();
+        getState()
       }
 
     getState() {
@@ -71,10 +71,10 @@ class HomePage extends Component {
          <recordHolder 
             
             recList={this.state.recordHolder.recordList}
-            deleteProduct={this.deleteRecord}
+            deleteRecord={this.deleteRecord}
           />
 
-      <button onClick={this.getInitialState}>Records </button>
+      <button onClick={this.getState}>Records </button>
    
         
               </div>
