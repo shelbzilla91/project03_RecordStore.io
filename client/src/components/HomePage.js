@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import recordHolder from './recordHolder';
+import recordList from './recordList';
 
 class HomePage extends Component {
     state = {
