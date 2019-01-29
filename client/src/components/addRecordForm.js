@@ -3,12 +3,8 @@ import axios from 'axios'
 
 class AddRecordForm extends Component {
     state = {
-        record: {
-            name: '',
-            band: '',
-            genre:'',
-            price:'',
-            img:''
+        records: [{}],
+           
         }
     }
 
