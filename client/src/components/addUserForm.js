@@ -22,7 +22,7 @@ class AddUserForm extends Component {
         const result = this.state.user
         axios.post('/api/users', result)
         .then((res) => {
-            this.props.getAllUsers()
+            this.props.getUsers()
             this.props.toggleAddUserForm()
         })
     }

@@ -2,13 +2,13 @@
 This is a fullstack API that allows users to add and contact users to buy records.
 
 
-#Link to Trello
-https://trello.com/b/p36CPJm1/project3-recordstore
-#link to Heroku Deployment
+**Link to Trello**
+https://trello.com/b/p36CPJm1/project3-recordstore<br>
+**link to Heroku Deployment**
 https://gentle-brushlands-75396.herokuapp.com/
 
 
-#Installed Dependencies
+**Installed Dependencies**
 <ul>
 <li>React.js</li>
 <li>MongoDB</li>
@@ -17,7 +17,7 @@ https://gentle-brushlands-75396.herokuapp.com/
 <li>Bootstrap</li>
 </ul>
 
-#Second Round
+**Second Round**
 
 <p>There are some things in my icebox,because time is always a flaw I am working harder on.
 </p>

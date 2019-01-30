@@ -3,14 +3,14 @@ const Record = require("../models/Record")
 
 const userController = {
     index: (req, res) => {
-       User.find({}).populate('records').then((users)=>{
+       User.find({}).populate('users').then((users)=>{
             res.send(users)
 
 
         })
     },
     show: (req, res) => {
-        User.findById(req.params.userId).populate('records')
+        User.findById(req.params.userId).populate('users')
             .then((user) => {
                 res.send(user)
             })

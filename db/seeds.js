@@ -18,7 +18,22 @@ const Shelby = new User({
     password: 'jk1010',
     email: 'shelbgatozillatron@gmail.com',
     img: 'https://www.udiscovermusic.com/wp-content/uploads/2017/07/FM014.jpg',
-    records: [Queen]
+    records: [Queen],})
+const Fleetwood = new Record ({
+        title:"Rumours",
+        release: 11/28/77,
+        band:"Fleetwood Mac",
+        genre:"Classic Rock",
+        username: 'kingofdahhill',
+        img: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/FMacRumours.PNG/220px-FMacRumours.PNG' })
+const Bobby = new User({
+        username: 'kingofdahhill',
+        name: 'Bobby H.',
+        password: 'booboo',
+        email: 'Itellyahwhat@gmail.com',
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH3Ts2AfASxOhfQ7O3hulzlAoWJ2Ki8PbyTkJcv3-jJy9v8dNx',
+        records: [Fleetwood],
+
 })
 
 
@@ -26,6 +41,8 @@ const Shelby = new User({
 User.remove({})
     .then(() => Record.remove({}))
     .then(() => Record.insertMany([Queen]))
+    .then(() => Record.insertMany([Fleetwood]))
     .then(() => Shelby.save())
+    .then(() => Bobby.save())
     .then(() => console.log('Successful Save'))
     .then(() => mongoose.connection.close())

@@ -36,7 +36,7 @@ class UserList extends Component {
                 
                 <button onClick={this.toggleAddUserForm}>Create new user</button>
                 {this.state.addUserFormVisible ? <AddUserForm
-                    getAllUsers={this.getAllUsers}
+                    getUsers={this.getUsers}
                     toggleAddUserForm={this.toggleAddUserForm}
                     /> : null}
                 {this.state.users.map((user, i) => (

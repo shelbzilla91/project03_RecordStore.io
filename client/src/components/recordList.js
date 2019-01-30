@@ -23,7 +23,9 @@ class recordList extends Component {
 
     getRecords = () => {
         axios.get(`/api/users`)
-        .then((res) => this.setState({ records: res.data.records }))
+        .then((res) => {this.setState({ records: res.data })
+
+        console.log(this.getRecords)})
     }
 
     toggleAddRecord = () => {
