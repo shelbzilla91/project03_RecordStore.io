@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import AddUserForm from './addUserForm';
+import AddUserForm from './AddUserForm'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-const GeneralStyles = styled.div`
+const BaseStyles = styled.div`
     text-align: center;
+    
+
 
 `
 
@@ -30,8 +32,8 @@ class UserList extends Component {
 
     render() {
         return (
-            <GeneralStyles>
-                <h1>Hey from user view</h1>
+            <BaseStyles>
+                
                 <button onClick={this.toggleAddUserForm}>Create new user</button>
                 {this.state.addUserFormVisible ? <AddUserForm
                     getAllUsers={this.getAllUsers}
@@ -42,7 +44,7 @@ class UserList extends Component {
                         <Link to={`/users/${user._id}`}><h3>{user.username}</h3></Link>
                     </div>
                 ))}
-            </GeneralStyles>
+            </BaseStyles>
         );
     }
 }

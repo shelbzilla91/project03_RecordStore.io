@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-import AddUserForm from './AddUserForm';
+import axios from 'axios';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import AddRecordForm from './AddRecordForm';
@@ -24,7 +23,7 @@ class recordList extends Component {
 
     getRecords = () => {
         axios.get(`/api/users`)
-        .then((res) => this.setState({ records: res.data }))
+        .then((res) => this.setState({ records: res.data.records }))
     }
 
     toggleAddRecord = () => {
@@ -34,8 +33,8 @@ class recordList extends Component {
     render() {
         return (
             <GeneralStyles>
-                <h1>Hey from user view</h1>
-                <button className="btn btn-secondary btn-sm" onClick={this.toggleAddUserForm}>Create new user</button>
+                <h1>Add Some New Tunes Dudes!</h1>
+                <button className="btn btn-secondary btn-sm" onClick={this.toggleAddUserForm}>Add Record</button>
                 {this.state.addRecord ? <AddRecordForm
                     getAllUsers={this.getAllUsers}
                     toggleAddRecord={this.toggleAddRecord}

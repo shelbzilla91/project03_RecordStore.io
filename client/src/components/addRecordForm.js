@@ -5,13 +5,13 @@ class AddRecordForm extends Component {
     state = {
         records: [{}],
            
-        }
+        
     }
 
     handleChange = (event) => {
-        const newState = { ...this.state.record }
+        const newState = { ...this.state.records }
         newState[event.target.name] = event.target.value
-        this.setState({ record: newState })
+        this.setState({ records: newState })
     }
 
     handleSubmit = (event) => {
@@ -26,28 +26,42 @@ class AddRecordForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className="form-group">
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <input type="text"
-                        placeholder=" album name"
+                        placeholder=" Album Name"
                         name="name"
-                        value={this.state.record.name}
+                        value={this.state.records.name}
                         onChange={this.handleChange}
                         />
                     </div>
                     <div>
                         <input type="text"
-                        placeholder="password"
-                        value={this.state.user.password}
+                        placeholder="Genre"
+                        value={this.state.records.genre}
                         onChange={this.handleChange}
-                        name="password"/>
+                        name="genre"/>
+                    </div>
+                    <div>
+                        <input type="text"
+                        placeholder="Band"
+                        value={this.state.records.band}
+                        onChange={this.handleChange}
+                        name="band"/>
+                    </div>
+                    <div>
+                        <input type="text"
+                        placeholder="IMG URL"
+                        value={this.state.records.img}
+                        onChange={this.handleChange}
+                        name="img"/>
                     </div>
                     <button>Submit</button>
                 </form>
             </div>
-        );
-    }
-}
-
+             );
+        }
+            
+    }    
 export default AddRecordForm;
