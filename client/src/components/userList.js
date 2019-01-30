@@ -42,6 +42,7 @@ class UserList extends Component {
                 {this.state.users.map((user, i) => (
                     <div key={i}>
                         <Link to={`/users/${user._id}`}><h3>{user.username}</h3></Link>
+                        
                     </div>
                 ))}
             </BaseStyles>

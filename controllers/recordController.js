@@ -3,22 +3,22 @@ const Record = require('../models/Record')
 
 const recordController = {
     index: (req, res) => {
-        var recordId = req.params.recordId
+        var userId = req.params.userId
         User.findById(userId).populate('records')
             .then((user) => {
                 res.send(user.records)
             })
     },
     show: (req, res) => {
-        var recordId = req.params.recordId
-        Record.findById(recordId)
+        var userId = req.params.recordId
+        Record.findById(userId)
             .then((record) => {
                 res.send(record)
             })
     },
     delete: (req, res) => {
-        var ideaId = req.params.recordId
-        Idea.findByIdAndDelete(recordId)
+        var userId = req.params.userId
+        User.findByIdAndDelete(userId)
             .then(() => {
                 res.send(200)
             })

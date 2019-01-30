@@ -13,19 +13,26 @@ const GeneralStyles = styled.div`
 
 class recordList extends Component {
     state = {
-        records: [{}],
+        records: [],
         addRecord: false
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.getRecords()
     }
 
-    getRecords = () => {
-        axios.get(`/api/users`)
-        .then((res) => {this.setState({ records: res.data })
-
-        console.log(this.getRecords)})
+    getRecords = async () => {
+        // console.log(this.props.match.params.theUserId)
+        console.log('Hey Im a console log')
+        const res = await axios.get(`/api/users/${this.props.theUserId}/records`)
+        console.log('We did it')
+        console.log(res)
+        const data = res.data
+        console.log(data)
+    //     axios.get(`/api/users/${this.props.userId}/records`)
+    //     .then((res) => {this.setState({ records: res.data })
+    //     console.log(this.state.records)
+    // })
     }
 
     toggleAddRecord = () => {
@@ -38,12 +45,13 @@ class recordList extends Component {
                 <h1>Add Some New Tunes Dudes!</h1>
                 <button className="btn btn-secondary btn-sm" onClick={this.toggleAddUserForm}>Add Record</button>
                 {this.state.addRecord ? <AddRecordForm
-                    getAllUsers={this.getAllUsers}
+                    getUsers={this.getUsers}
                     toggleAddRecord={this.toggleAddRecord}
                     /> : null}
                 {this.state.records.map((record, i) => (
                     <div key={i}>
-                        <Link to={`/users/${record._id}`}><h3>{record.name}</h3>
+                        <Link to={`/users/${record._id}`}>
+                        <h3>{record.name}</h3>
                         
                         
                         </Link>

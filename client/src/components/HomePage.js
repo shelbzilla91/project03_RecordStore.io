@@ -18,7 +18,7 @@ class HomePage extends Component {
             
 
                 <RecordList />
-                <AddRecordForm />
+                
                 <UserList />
 
             </div>
