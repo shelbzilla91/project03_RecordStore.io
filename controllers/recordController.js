@@ -48,4 +48,4 @@ const recordController = {
 
 }
 
-module.exports = ideasController
+module.exports = recordController
