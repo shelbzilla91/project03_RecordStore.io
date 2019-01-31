@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import RecordList from './RecordList';
-import AddRecordForm from './AddRecordForm'
 import axios from 'axios'
+import RecordList from './RecordList';
 
-class singleUser extends Component {
+class SingleUser extends Component {
     state = {
         user: {},
       
@@ -26,13 +25,10 @@ class singleUser extends Component {
             <div>
                 {this.state.user.name}
                 {this.state.user.email}
-               <RecordList 
-                theUserId={this.state.user._id}
-               />
-               <AddRecordForm />
+                <RecordList userId={this.props.match.params.userId}/>
             </div>
         );
     }
 }
 
-export default singleUser;
+export default SingleUser;

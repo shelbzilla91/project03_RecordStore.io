@@ -5,34 +5,24 @@ import { Link } from 'react-router-dom'
 import AddRecordForm from './AddRecordForm';
 
 
-
-
 const GeneralStyles = styled.div`
     text-align: center;
 `
 
-class recordList extends Component {
+class RecordList extends Component {
     state = {
         records: [],
         addRecord: false
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.getRecords()
     }
 
     getRecords = async () => {
-        // console.log(this.props.match.params.theUserId)
-        console.log('Hey Im a console log')
-        const res = await axios.get(`/api/users/${this.props.theUserId}/records`)
-        console.log('We did it')
-        console.log(res)
-        const data = res.data
-        console.log(data)
-    //     axios.get(`/api/users/${this.props.userId}/records`)
-    //     .then((res) => {this.setState({ records: res.data })
-    //     console.log(this.state.records)
-    // })
+        console.log('hello')
+        const res = await axios.get(`/api/users/${this.props.userId}/records`)
+        console.log(res.data)
     }
 
     toggleAddRecord = () => {
@@ -40,6 +30,15 @@ class recordList extends Component {
     }
 
     render() {
+
+      // const records = this.state.records.map((record, i) => {
+      //   return (
+      //     <div>
+      //       {record.name}
+      //     </div>
+      //   )
+      // })
+
         return (
             <GeneralStyles>
                 <h1>Add Some New Tunes Dudes!</h1>
@@ -63,4 +62,4 @@ class recordList extends Component {
     }
 }
 
-export default recordList;
+export default RecordList;
