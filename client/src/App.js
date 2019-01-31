@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import HomePage from './components/HomePage'
 // import recordList from './components/recordList';
-import UserList from '../src/components/UserList';
+import UserList from './components/UserList';
 import SingleUser from './components/SingleUser'
 
 class App extends Component {
