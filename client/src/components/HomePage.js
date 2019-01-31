@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import AddRecordForm from './AddRecordForm';
 import RecordList from './RecordList';
 import UserList from './UserList';
 
