@@ -4,12 +4,44 @@ import AddUserForm from './AddUserForm'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
+
 const BaseStyles = styled.div`
+    display:flex;
+    flex-direction:row;
     text-align: center;
+`
+const Container = styled.div`
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align: center;
+    border: 5px solid blue;
+    width:100vw;
     
+`
+const UserImg = styled.img`
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    width: 45vw;
+    border:5px solid blue;
 
 
 `
+const SideBar = styled.div`
+    display:flex;
+    flex-direction:row;
+    justifty content:center;
+    align-content:right;
+    border:5px solid blue;
+    margin:5px;
+    padding:10px;
+    width:30vw;
+   
+
+`
+
 
 // Test here
 
@@ -34,20 +66,40 @@ class UserList extends Component {
 
     render() {
         return (
+            
             <BaseStyles>
-                
-                <button onClick={this.toggleAddUserForm}>Create new user</button>
                 {this.state.addUserFormVisible ? <AddUserForm
                     getUsers={this.getUsers}
                     toggleAddUserForm={this.toggleAddUserForm}
                     /> : null}
+            <Container>
+                
                 {this.state.users.map((user, i) => (
-                    <div key={i}>
-                        <Link to={`/users/${user._id}`}><h3>{user.username}</h3></Link>
-                        
-                    </div>
+                <div key={i}>
+                <Link to={`/users/${user._id}`}>
+                <UserImg src={user.img} alt="..."/>
+                <div className="card-body">
+                <h5 className="card-title">{user.name}</h5>
+                <h3>{user.username}</h3>
+                 <h3>{user.email}</h3>
+                 </div>        
+                </Link>
+                <Link to={`/users/${user._id}`}className="btn btn-primary">Check their Tunes</Link>
+                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>      
+                </div>
                 ))}
+                 </Container>
+                <SideBar>
+               
+                    <div>
+                    <button className="btn btn-primary" onClick={this.toggleAddUserForm}>Create new user</button>
+                  
+                        <p>boobooo</p>
+                    </div>
+                </SideBar>
+               
             </BaseStyles>
+            
         );
     }
 }

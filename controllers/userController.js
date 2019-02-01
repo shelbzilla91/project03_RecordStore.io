@@ -16,7 +16,7 @@ const userController = {
             })
     },
     update: (req, res) => {
-        User.findByIdAndUpdate(req.params.userId, req.body)
+        User.findByIdAndUpdate(req.params.userId, req.body, {new:true})
             .then((updatedUser) => {
                 updatedUser.save()
                 res.send(updatedUser)

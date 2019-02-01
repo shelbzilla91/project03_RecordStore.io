@@ -32,10 +32,10 @@ const recordController = {
             })
     },
     create: (req, res) => {
-        var recordId = req.params.recordId
-        Record.findById(recordId)
-            .then((record) => {
-                console.log(record)
+        var userId = req.params.userId
+        User.findById(userId)
+            .then((user) => {
+                console.log(Record)
                 Record.create(req.body)
                     .then((newRecord) => {
                         console.log(newRecord)
