@@ -8,15 +8,24 @@ import AddRecordForm from './AddRecordForm';
 const GeneralStyles = styled.div`
     text-align: center;
 `
-const ListStyles =styled.div
+const UserImg = styled.img`
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+width: 25vw;
+height:35vh;
+border:5px solid red;
 `
+const RecImg = styled.div `
 display:flex;
 flex-direction:column;
-justify-content:center;
-text-align: center;
-border: 5px solid blue;
-width:100vw;
-
+justify-content:right;
+align-items:center;
+text-align:center;
+width: 25vw;
+height:25vh;
+border:5px solid black;
 `
 
 class RecordList extends Component {
@@ -30,7 +39,6 @@ class RecordList extends Component {
     }
 
     getRecords = async () => {
-        console.log('hello')
         const res = await axios.get(`/api/users/${this.props.userId}/records`)
         console.log(res.data)
         this.setState({records: res.data})
@@ -60,11 +68,13 @@ class RecordList extends Component {
                         <div key={i}>
                         <Link to={`/users/${record._id}`}>
                         </Link>
+                        <UserImg src={record.img} alt="..."/>
+                        <RecImg>
                         <h3>{record.title}</h3>
                         <h3>{record.band}</h3>
                         <h3>{record.genre}</h3>
-                        <h3>{record.img}</h3>
-                        
+                        <h3>{record.price}</h3>
+                        </RecImg>
                     </div>
                     )
                 }

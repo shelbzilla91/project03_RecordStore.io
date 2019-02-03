@@ -76,25 +76,25 @@ class UserList extends Component {
                 
                 {this.state.users.map((user, i) => (
                 <div key={i}>
-                <Link to={`/users/${user._id}`}>
+               
                 <UserImg src={user.img} alt="..."/>
                 <div className="card-body">
-                <h5 className="card-title">{user.name}</h5>
-                <h3>{user.username}</h3>
-                 <h3>{user.email}</h3>
-                 </div>        
-                </Link>
+              
+                <div className="card-title text-justify">
+                <h5>{user.name}</h5>
+                <h5>{user.username}</h5>
+                <h3>{user.email}</h3>
+                 </div> 
+                 </div>       
+               
                 <Link to={`/users/${user._id}`}className="btn btn-primary">Check their Tunes</Link>
                 <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>      
                 </div>
                 ))}
                  </Container>
                 <SideBar>
-               
                     <div>
                     <button className="btn btn-primary" onClick={this.toggleAddUserForm}>Create new user</button>
-                  
-                        <p>boobooo</p>
                     </div>
                 </SideBar>
                

@@ -6,21 +6,35 @@ import styled from 'styled-components'
 
 const UserImg = styled.img`
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
-    width: 45vw;
+    width: 35vw;
+    height:45vh;
     border:5px solid blue;
-
-
 `
+const RecList = styled.div `
+display:flex;
+flex-direction:row;
+justify-content:right;
+align-items:right;
+width: 35vw;
+border:5px solid blue;
+`
+const Container = styled.div `
+display:flex;
+flex-direction:row;
+justify-content:right;
+align-items:right;
+width: 100vw;
+border:5px solid blue;
+`
+
 
 
 class SingleUser extends Component {
     state = {
         user: {},
-
-      
     }
 
     componentDidMount() {
@@ -34,6 +48,13 @@ class SingleUser extends Component {
             console.log("this one",this.state.user._id)
         })
     }
+
+    deleteUser = () => {
+        const userId = this.props.match.params.userId
+        axios.delete(`/api/users/${userId}`)
+            .then(() => this.props.history.goBack())
+    }
+
     editUsers = () => {
         axios.get()
     }
@@ -43,21 +64,24 @@ class SingleUser extends Component {
         return (
             <div>
                 <a class="nav-link active" href="/">Home</a>
-                 <UserImg src={this.state.user.img} alt="..."/>      
-                <span class="badge badge-pill badge-primary">{this.state.user.name}</span>
-                <span class="badge badge-pill badge-primary">{this.state.user.username}</span>
-                <span class="badge badge-pill badge-primary">{this.state.user.email}</span>
-                
+                <Container><RecList><UserImg src={this.state.user.img} alt="..."/>     
+                </RecList> 
                 <RecordList
                 userId={this.props.match.params.userId}
                 />
-                
+              </Container>
+              {/* <span class="badge badge-pill badge-primary">{this.state.user.name}</span>
+                <span class="badge badge-pill badge-primary">{this.state.user.username}</span>
+                <span class="badge badge-pill badge-primary">{this.state.user.email}</span>
+                 */}
                 <AddUserEdit 
                 userId={this.props.match.params.userId}
                 history={this.props.history}   
                 getUsers={this.getUsers}             
                 />
+                <div><button onClick={this.deleteUser}>Delete User</button></div>
             </div>
+            
         );
     }
 }

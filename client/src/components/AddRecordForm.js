@@ -13,6 +13,12 @@ class AddRecordForm extends Component {
            
         
     }
+    getRecords = async () => {
+        const res = await axios.get(`/api/users/${this.props.userId}/records`)
+        console.log(res.data)
+        this.setState({records: res.data})
+        console.log(this.state.records)
+    }
 
     handleChange = (event) => {
         const newState = { ...this.state.records }
@@ -38,7 +44,7 @@ class AddRecordForm extends Component {
                         <input type="text"
                         placeholder=" Album Name"
                         name="name"
-                        value={this.state.records.name}
+                        value={this.state.records.title}
                         onChange={this.handleChange}
                         />
                     </div>
@@ -63,6 +69,14 @@ class AddRecordForm extends Component {
                         placeholder="IMG URL"
                         name="img"
                         value={this.state.records.img}
+                        onChange={this.handleChange}
+                        />
+                    </div>
+                    <div>
+                        <input type="text"
+                        placeholder="Price"
+                        name="price"
+                        value={this.state.records.price}
                         onChange={this.handleChange}
                         />
                     </div>

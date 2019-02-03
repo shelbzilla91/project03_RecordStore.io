@@ -54,6 +54,13 @@ class AddUserForm extends Component {
                         onChange={this.handleChange}
                         name="email"/>
                     </div>
+                    <div>
+                        <input type="text"
+                        placeholder="IMG Url"
+                        value={this.state.user.img}
+                        onChange={this.handleChange}
+                        name="img"/>
+                    </div>
                     <button>Submit</button>
                 </form>
             </div>
