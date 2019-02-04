@@ -35,6 +35,7 @@ const UserImg = styled.img`
     height:55vh;
     color:#2BDEDB;
     border:5px solid blue;
+    border-radius:15px;
 `
 const RecList = styled.div `
 display:flex;
@@ -63,6 +64,7 @@ width: 30vw;
 height:10vh;
 background-color:#2BDEDB;
 border:5px solid #4286f4;
+border-radius:15px;
 `
 const EditContainer = styled.div `
 display:flex;
@@ -72,6 +74,7 @@ align-items:center;
 width: 20vw;
 height:10vh;
 border:5px solid #4286f4;
+border-radius:15px;
 `
 const Holder = styled.div `
 display:flex;

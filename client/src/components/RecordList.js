@@ -46,7 +46,7 @@ const RecForm = styled.div `
 display:flex;
 flex-direction:row;
 justify-content:left;
-border: 5px solid black;
+border: 5px solid #4286f4;
 
 
 `
@@ -70,7 +70,7 @@ class RecordList extends Component {
     deleteRecord = (event, userId) => {
         event.preventDefault()
         axios.delete(`/api/users/${userId}/records`).then(() => {
-            this.props.getRecords()
+            this.getRecords()
         })
     }
 
@@ -87,7 +87,8 @@ class RecordList extends Component {
             <GeneralStyles>
                 <RecForm>
                 <h1>Add Some New Tunes Dudes!</h1>
-                <button className="btn btn-secondary btn-sm" onClick={this.toggleAddRecordForm}>Add Record</button>
+                <button className="badge badge-pill badge-primary center" onClick={this.toggleAddRecordForm}>Add Record</button>
+                <button class="badge badge-pill badge-primary center" onClick={this.deleteRecord}>Delete Record</button>
                 {this.state.addRecord ? <AddRecordForm
                     getUsers={this.getUsers}
                     toggleAddRecordForm={this.toggleAddRecordForm}
@@ -96,7 +97,7 @@ class RecordList extends Component {
                     </RecForm>
                     
                     <div>
-                    <div><button class="badge badge-pill badge-primary center" onClick={this.deleteRecord}>Delete Record</button></div>
+                    
                 {this.state.records.map((record, i) => {
                     return (
                         <div key={i}>

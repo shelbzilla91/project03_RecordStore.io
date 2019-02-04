@@ -59,7 +59,7 @@ class AddRecordForm extends Component {
                     <div>
                         <input type="text"
                         placeholder=" Album Name"
-                        name="name"
+                        name="title"
                         value={this.state.records.title}
                         onChange={this.handleChange}
                         />

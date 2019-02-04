@@ -5,7 +5,7 @@ This is a fullstack API that allows users to add and contact users to buy record
 **Link to Trello**
 https://trello.com/b/p36CPJm1/project3-recordstore<br>
 **link to Heroku Deployment**
-https://gentle-brushlands-75396.herokuapp.com/
+
 
 
 **Installed Dependencies**
@@ -17,7 +17,7 @@ https://gentle-brushlands-75396.herokuapp.com/
 <li>Bootstrap</li>
 </ul>
 
-**WIRE FRAMES**
+**WIRE FRAMES**<br>
 ![alt text](https://vectr.com/sbaker91/a1dQDcAuBf.svg?width=640&height=640&select=a1dQDcAuBfpage0)<br>
 ![alt text](https://vectr.com/sbaker91/a1dQDcAuBf.svg?width=640&height=640&select=i1NqSH3Roe)
 ![alt text](https://vectr.com/sbaker91/a1dQDcAuBf.svg?width=640&height=640&select=c8uSPdHag)
