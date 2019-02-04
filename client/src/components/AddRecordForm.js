@@ -7,7 +7,8 @@ class AddRecordForm extends Component {
             band:"",
             genre:"",
             name:"",
-            img:""
+            img:"",
+            price:Number,
 
         }
            
@@ -38,6 +39,7 @@ class AddRecordForm extends Component {
 
     render() {
         return (
+           
             <div className="form-group">
                 <form onSubmit={this.handleSubmit}>
                     <div>
@@ -73,7 +75,7 @@ class AddRecordForm extends Component {
                         />
                     </div>
                     <div>
-                        <input type="text"
+                        <input type="number"
                         placeholder="Price"
                         name="price"
                         value={this.state.records.price}
@@ -83,6 +85,7 @@ class AddRecordForm extends Component {
                     <button>Submit</button>
                 </form>
             </div>
+       
              );
         }
             

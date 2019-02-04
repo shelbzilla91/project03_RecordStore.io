@@ -6,29 +6,41 @@ import styled from 'styled-components'
 
 const UserImg = styled.img`
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     justify-content:center;
     align-items:center;
-    width: 35vw;
+    width: 30vw;
     height:45vh;
     border:5px solid blue;
 `
 const RecList = styled.div `
 display:flex;
-flex-direction:row;
+flex-direction:column;
 justify-content:right;
 align-items:right;
-width: 35vw;
+width: 65vw;
 border:5px solid blue;
 `
 const Container = styled.div `
 display:flex;
-flex-direction:row;
-justify-content:right;
+flex-direction:column;
+justify-content:center;
 align-items:right;
 width: 100vw;
-border:5px solid blue;
+height:100vh;
+border:5px solid yellow;
 `
+const InfoContainer = styled.div `
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+width: 30vw;
+height:30vh;
+border:5px solid #4286f4;
+`
+
+
 
 
 
@@ -64,16 +76,19 @@ class SingleUser extends Component {
         return (
             <div>
                 <a class="nav-link active" href="/">Home</a>
-                <Container><RecList><UserImg src={this.state.user.img} alt="..."/>     
-                </RecList> 
+                <Container><RecList><UserImg src={this.state.user.img} alt="..."/>      
+                
+                <InfoContainer>
+                <span class="badge badge-pill badge-primary">{this.state.user.name}</span>
+                <span class="badge badge-pill badge-primary">{this.state.user.username}</span>
+                <span class="badge badge-pill badge-primary">{this.state.user.email}</span>
+                </InfoContainer>
+                </RecList>
                 <RecordList
                 userId={this.props.match.params.userId}
                 />
               </Container>
-              {/* <span class="badge badge-pill badge-primary">{this.state.user.name}</span>
-                <span class="badge badge-pill badge-primary">{this.state.user.username}</span>
-                <span class="badge badge-pill badge-primary">{this.state.user.email}</span>
-                 */}
+        
                 <AddUserEdit 
                 userId={this.props.match.params.userId}
                 history={this.props.history}   

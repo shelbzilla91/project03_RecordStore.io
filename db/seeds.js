@@ -11,7 +11,9 @@ const Queen = new Record ({
     band:"Queen",
     genre:"Classic Rock",
     username: 'shelbzilla91',
-    img: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/ea/Queen_News_Of_The_World.png/220px-Queen_News_Of_The_World.png' })
+    img: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/ea/Queen_News_Of_The_World.png/220px-Queen_News_Of_The_World.png',
+    price:40.00
+})
 const Shelby = new User({
     username: 'shelbzilla91',
     name: 'Shelby',
@@ -25,7 +27,9 @@ const Fleetwood = new Record ({
         band:"Fleetwood Mac",
         genre:"Classic Rock",
         username: 'kingofdahhill',
-        img: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/FMacRumours.PNG/220px-FMacRumours.PNG' })
+        img: 'https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/FMacRumours.PNG/220px-FMacRumours.PNG',
+        price:55.00
+    })
 const Bobby = new User({
         username: 'kingofdahhill',
         name: 'Bobby H.',

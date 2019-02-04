@@ -6,7 +6,8 @@ const Record = new Schema({
     band: String,
     genre:String,
     release:Number,
-    img:String
+    img:String,
+    price: Number
 })
 
 module.exports = mongoose.model('Record', Record)
