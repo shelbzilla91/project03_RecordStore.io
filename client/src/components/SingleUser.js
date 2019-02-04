@@ -4,6 +4,7 @@ import RecordList from './RecordList';
 import AddUserEdit from './AddUserEdit';
 import styled from 'styled-components'
 import Slide from 'react-reveal/Slide';
+import Bounce from 'react-reveal/Bounce';
 
 const WreckingBall = styled.img`
             width: 100px;
@@ -21,6 +22,7 @@ border:5px solid blue;
 `
 const GenralStyles = styled.div `
 background: linear-gradient(to left, #2193b0, #6dd5ed);
+color:white;
 
 `
 
@@ -49,7 +51,7 @@ flex-direction:column;
 justify-content:center;
 align-items:right;
 width: 100vw;
-height:130vh;
+height:230vh;
 border:5px solid #4286f4;
 `
 const InfoContainer = styled.div `
@@ -65,23 +67,18 @@ border:5px solid #4286f4;
 const EditContainer = styled.div `
 display:flex;
 flex-direction:row;
-justify-content:flex-end;
+justify-content:center;
 align-items:center;
 width: 20vw;
 height:10vh;
 border:5px solid #4286f4;
 `
-const Holder = styled.div 
-`
+const Holder = styled.div `
 display:flex;
 flex-direction: column;
 align-items: center;
 
 `
-
-
-
-
 
 class SingleUser extends Component {
     state = {
@@ -96,7 +93,7 @@ class SingleUser extends Component {
         axios.get(`/api/users/${this.props.match.params.userId}`)
         .then((res) => {
             this.setState({ user: res.data })
-            console.log("this one",this.state.user._id)
+            
         })
     }
 
@@ -105,6 +102,7 @@ class SingleUser extends Component {
         axios.delete(`/api/users/${userId}`)
             .then(() => this.props.history.goBack())
     }
+  
 
     editUsers = () => {
         axios.get()
@@ -121,6 +119,9 @@ class SingleUser extends Component {
                 <Slide right>
                 <WreckingBall src="http://vinylgif.com/gifs/201412/spinning-7-inch.gif" alt="..."/>
                 </Slide>
+                <Bounce right>
+                <h1>Building Community through Music</h1>
+                </Bounce>
                 <nav class="navbar navbar-light bg-light">
                     <a class="nav-link active" href="/">Home</a>
  
@@ -145,9 +146,9 @@ class SingleUser extends Component {
                 history={this.props.history}   
                 getUsers={this.getUsers}             
                 />
-                <div><button onClick={this.deleteUser}>Delete User</button></div>
+                <div><button class="badge badge-pill badge-primary center" onClick={this.deleteUser}>Delete User</button></div>
                 </EditContainer>
-            
+        
                 </RecFormHolder>
                 </RecList>
                 <RecordList

@@ -10,7 +10,7 @@ const recordController = {
             })
     },
     show: (req, res) => {
-        var userId = req.params.recordId
+        var userId = req.params.userId
         Record.findById(userId)
             .then((record) => {
                 res.send(record)
@@ -18,7 +18,7 @@ const recordController = {
     },
     delete: (req, res) => {
         var userId = req.params.userId
-        User.findByIdAndDelete(userId)
+        User.findByIdAndDelete(userId.records)
             .then(() => {
                 res.send(200)
             })

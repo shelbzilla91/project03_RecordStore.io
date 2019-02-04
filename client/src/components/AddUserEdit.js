@@ -66,7 +66,7 @@ class AddUserEdit extends Component {
                         name="img"/>
                     </div>
                     <button>EDIT</button>
-                    <p>kiiiiiii{this.props.stone}</p>
+                    
                 </form>
             </div>
         );

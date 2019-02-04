@@ -18,6 +18,7 @@ const Container = styled.div`
     border: 5px solid blue;
     width:100vw;
     
+    
 `
 const UserImg = styled.img`
     display:flex;
@@ -26,6 +27,8 @@ const UserImg = styled.img`
     align-items:center;
     width: 45vw;
     border:5px solid blue;
+    margin:10px;
+    padding:10px;
 `
 const SideBar = styled.div`
     display:flex;

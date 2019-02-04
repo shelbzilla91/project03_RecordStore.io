@@ -33,11 +33,21 @@ display: block;
 const RecContainer = styled.div `
 display: flex;
 flex-direction:row;
-justify-content:center;
+justify-content:left;
 align-content: center;
-width:62vw;
+width:100vw;
+height:40vh;
 background-color:#55DBD9;
 border: 5px solid #4286f4;
+
+`
+const RecForm = styled.div `
+
+display:flex;
+flex-direction:row;
+justify-content:left;
+border: 5px solid black;
+
 
 `
 
@@ -46,7 +56,7 @@ class RecordList extends Component {
         records: [],
         addRecord: false
     }
-
+    
     componentDidMount() {
         this.getRecords()
     }
@@ -55,8 +65,15 @@ class RecordList extends Component {
         const res = await axios.get(`/api/users/${this.props.userId}/records`)
         console.log(res.data)
         this.setState({records: res.data})
-        console.log(this.state.records)
+
     }
+    deleteRecord = (event, userId) => {
+        event.preventDefault()
+        axios.delete(`/api/users/${userId}/records`).then(() => {
+            this.props.getRecords()
+        })
+    }
+
 
     toggleAddRecordForm = () => {
         this.setState({ addRecord: !this.state.addRecord})
@@ -68,6 +85,7 @@ class RecordList extends Component {
 
         return (
             <GeneralStyles>
+                <RecForm>
                 <h1>Add Some New Tunes Dudes!</h1>
                 <button className="btn btn-secondary btn-sm" onClick={this.toggleAddRecordForm}>Add Record</button>
                 {this.state.addRecord ? <AddRecordForm
@@ -75,7 +93,10 @@ class RecordList extends Component {
                     toggleAddRecordForm={this.toggleAddRecordForm}
                     userId= {this.props.userId}
                     /> : null}
+                    </RecForm>
+                    
                     <div>
+                    <div><button class="badge badge-pill badge-primary center" onClick={this.deleteRecord}>Delete Record</button></div>
                 {this.state.records.map((record, i) => {
                     return (
                         <div key={i}>

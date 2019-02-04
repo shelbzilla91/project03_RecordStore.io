@@ -17,6 +17,18 @@ https://gentle-brushlands-75396.herokuapp.com/
 <li>Bootstrap</li>
 </ul>
 
+**WIRE FRAMES**
+![alt text](https://vectr.com/sbaker91/a1dQDcAuBf.svg?width=640&height=640&select=a1dQDcAuBfpage0)<br>
+![alt text](https://vectr.com/sbaker91/a1dQDcAuBf.svg?width=640&height=640&select=i1NqSH3Roe)
+![alt text](https://vectr.com/sbaker91/a1dQDcAuBf.svg?width=640&height=640&select=c8uSPdHag)
+![alt text](https://vectr.com/sbaker91/a1dQDcAuBf.svg?width=640&height=640&select=c2JvimMgED)
+
+**Process**
+I have to say this was the hardest project yet. I had trouble understanding the connecting of the front and back end through axios/react. I started out wanting to do a full ons hopping app for vinyl records, but realized that a post/sell concept was better. I was able to get two models working and hard-learned the many concepts on both ends. I got the hang of styled-components and dabbed in some bootstrap. I wanted to add a third model of comments, but found myself out of time. Although React was challenging, and also brushing up on CRUD again, I think it was a good head-dive towards project four. 
+
+
+
+
 **Second Round**
 
 <p>There are some things in my icebox,because time is always a flaw I am working harder on.

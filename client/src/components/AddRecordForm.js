@@ -7,7 +7,6 @@ const RecForm = styled.div `
 display:flex;
 flex-direction:row;
 justify-content:center;
-align-items:center;
 align-content:center;
 width: 25vw;
 height:35vh;
@@ -34,6 +33,7 @@ class AddRecordForm extends Component {
         this.setState({records: res.data})
         console.log(this.state.records)
     }
+    
 
     handleChange = (event) => {
         const newState = { ...this.state.records }
@@ -98,6 +98,7 @@ class AddRecordForm extends Component {
                     </div>
                     <button>Submit</button>
                 </form>
+                
             </div>
             </RecForm>
        

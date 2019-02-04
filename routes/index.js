@@ -11,9 +11,9 @@ router.delete('/api/users/:userId', userController.delete)
 
 
 router.get('/api/users/:userId/records', recordController.index)
-router.get('/api/records/:ideaId', recordController.show)
-router.delete('/api/records/:ideaId', recordController.delete)
-router.patch('/api/records/:ideaId', recordController.update)
+router.get('/api/records/:recordId', recordController.show)
+router.delete('/api/users/:userId/records', recordController.delete)
+router.patch('/api/records/:recordId', recordController.update)
 router.post('/api/users/:userId/records', recordController.create)
 
 

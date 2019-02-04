@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import UserList from './UserList';
 import styled from 'styled-components'
 import Slide from 'react-reveal/Slide';
+import Bounce from 'react-reveal/Bounce';
 
 const WreckingBall = styled.img`
             width: 100px;
@@ -9,6 +10,7 @@ const WreckingBall = styled.img`
 `
 const GenralStyles = styled.div `
 background: linear-gradient(to left, #2193b0, #6dd5ed);
+color:white;
 
 `
 const HeaderImg = styled.div `
@@ -36,6 +38,11 @@ class HomePage extends Component {
                 <Slide right>
                 <WreckingBall src="http://vinylgif.com/gifs/201412/spinning-7-inch.gif" alt="..."/>
                 </Slide>
+             
+                <Bounce right>
+                <h1>Building Community through Music</h1>
+                </Bounce>
+
                 </HeaderHolder>
                 </HeaderImg>
                 
