@@ -26,8 +26,6 @@ const UserImg = styled.img`
     align-items:center;
     width: 45vw;
     border:5px solid blue;
-
-
 `
 const SideBar = styled.div`
     display:flex;
@@ -38,9 +36,8 @@ const SideBar = styled.div`
     margin:5px;
     padding:10px;
     width:30vw;
-   
-
 `
+
 
 
 // Test here
@@ -68,10 +65,6 @@ class UserList extends Component {
         return (
             
             <BaseStyles>
-                {this.state.addUserFormVisible ? <AddUserForm
-                    getUsers={this.getUsers}
-                    toggleAddUserForm={this.toggleAddUserForm}
-                    /> : null}
             <Container>
                 
                 {this.state.users.map((user, i) => (
@@ -86,14 +79,18 @@ class UserList extends Component {
                 <h3>{user.email}</h3>
                  </div> 
                  </div>       
-               
-                <Link to={`/users/${user._id}`}className="btn btn-primary">Check their Tunes</Link>
-                <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>      
+              
+                <Link to={`/users/${user._id}`}className="btn btn-primary ">Check their Tunes</Link>
+                     
                 </div>
                 ))}
                  </Container>
                 <SideBar>
                     <div>
+                    {this.state.addUserFormVisible ? <AddUserForm
+                    getUsers={this.getUsers}
+                    toggleAddUserForm={this.toggleAddUserForm}
+                    /> : null}
                     <button className="btn btn-primary" onClick={this.toggleAddUserForm}>Create new user</button>
                     </div>
                 </SideBar>

@@ -1,5 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import styled from 'styled-components'
+
+const RecForm = styled.div `
+
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+align-content:center;
+width: 25vw;
+height:35vh;
+border-radius: 5px;
+border:5px solid #4286f4;
+`
 
 class AddRecordForm extends Component {
     state = {
@@ -39,7 +53,7 @@ class AddRecordForm extends Component {
 
     render() {
         return (
-           
+           <RecForm>
             <div className="form-group">
                 <form onSubmit={this.handleSubmit}>
                     <div>
@@ -85,6 +99,7 @@ class AddRecordForm extends Component {
                     <button>Submit</button>
                 </form>
             </div>
+            </RecForm>
        
              );
         }

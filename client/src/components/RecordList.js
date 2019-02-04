@@ -36,6 +36,7 @@ flex-direction:row;
 justify-content:center;
 align-content: center;
 width:62vw;
+background-color:#55DBD9;
 border: 5px solid #4286f4;
 
 `
@@ -86,7 +87,7 @@ class RecordList extends Component {
                         <h3>{record.title}</h3>
                         <h3>{record.band}</h3>
                         <h3>{record.genre}</h3>
-                        <h3>{record.price}</h3>
+                        <h3>${record.price}</h3>
                         </RecImg>
                         </RecContainer>
                     </div>
