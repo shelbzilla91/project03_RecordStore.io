@@ -107,3 +107,5 @@ class AddRecordForm extends Component {
             
     }    
 export default AddRecordForm;
+
+// If you refresh the page after entering the record it does work, don't have any clue why it's saying a error before.The delete function is on the same page but still said undefined.
