@@ -1,5 +1,5 @@
 # project03_RecordStore
-This is a fullstack API that allows users to add and contact users to buy records.
+This is a fullstack APP that allows users to add and contact users to buy records.
 
 
 **Link to Trello**
